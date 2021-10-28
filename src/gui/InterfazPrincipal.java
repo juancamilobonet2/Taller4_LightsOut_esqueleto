@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class InterfazPrincipal extends JFrame{
 	
@@ -13,6 +15,7 @@ public class InterfazPrincipal extends JFrame{
 	private PanelTablero panelTablero;
 	private PanelBotones panelBotones;
 	private PanelInfo panelInfo;
+	private PanelEmpty panelTest;
 	
 	public InterfazPrincipal () {
 		BorderLayout bl = new BorderLayout();
@@ -27,7 +30,7 @@ public class InterfazPrincipal extends JFrame{
 		panelSettings.setBounds(0, 0, 800, 100);
 		add(panelSettings);
 		
-		panelTablero = new PanelTablero();
+		panelTablero = new PanelTablero(0,new boolean[0][0]);
 		panelTablero.setBackground(Color.white);
 		panelTablero.setBounds(0, 100, 800, 500);
 		add(panelTablero);
@@ -42,12 +45,23 @@ public class InterfazPrincipal extends JFrame{
 		panelInfo.setBounds(0, 700, 800, 100);
 		add(panelInfo);
 		
-		//add(new JPanel());
+		panelTest = new PanelEmpty();
+        panelTest.setBackground(Color.yellow);
+        panelTest.setBounds(0, 500, 800, 100);
+        add(panelTest);
+		
+		panelSettings.setPanelTablero(panelTablero);
 		
 	}
 	
 	public static void main(String[] args) {
 		InterfazPrincipal ventana = new InterfazPrincipal();
 		ventana.setVisible(true);
+		
+		
+	}
+	
+	public void updateTablero(int tamanio, boolean[][] tablero) {
+		
 	}
 }

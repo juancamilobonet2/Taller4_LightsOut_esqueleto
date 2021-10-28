@@ -18,6 +18,8 @@ public class PanelSettings extends JPanel {
 	private JRadioButton option1;
     private JRadioButton option2;
     private JRadioButton option3;
+    
+    private PanelTablero tablero;
 	
 	
 
@@ -66,6 +68,8 @@ public class PanelSettings extends JPanel {
                 } else if (selectedBook.equals("6x6")) {
                     tamanio = 6;
                 }
+                
+                tablero.setTamanio(tamanio);
             }
         });
 	}
@@ -86,5 +90,9 @@ public class PanelSettings extends JPanel {
 	
 	public int getTamanio() {
 		return tamanio;
+	}
+	
+	public void setPanelTablero(PanelTablero tablero) {
+		this.tablero = tablero;
 	}
 }
